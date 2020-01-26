@@ -7,6 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * This class is going to handle all the properties that are set on the gradle.properties file.
+ */
 public final class PropertiesInfo {
     private static final Logger LOGGER = Logger.getLogger(PropertiesInfo.class.getSimpleName());
     private static final String CONFIG_PROPERTIES = "gradle.properties";
@@ -20,6 +23,10 @@ public final class PropertiesInfo {
         loadProperties();
     }
 
+    /**
+     * This method is going to retrieve just one instance of the PropertiesInfo class.
+     * @return PropertiesInfo instance.
+     */
     public static PropertiesInfo getInstance() {
         if (instance == null) {
             instance = new PropertiesInfo();
@@ -27,6 +34,9 @@ public final class PropertiesInfo {
         return instance;
     }
 
+    /**
+     * This method is going to load properties file.
+     */
     private void loadProperties() {
         try {
             FileInputStream fileInputStream = null;
@@ -46,6 +56,11 @@ public final class PropertiesInfo {
         }
     }
 
+    /**
+     * This method is going to retrieve the required property.
+     * @param propertyKey to be used.
+     * @return value of the propertyKey.
+     */
     public String getProperty(String propertyKey) {
         String propertyValue = System.getProperty(propertyKey);
         if (propertyValue == null) {
@@ -54,10 +69,18 @@ public final class PropertiesInfo {
         return propertyValue;
     }
 
+    /**
+     * This method retrieves the URL of the WebApplication to be used.
+     * @return the url of the WebApplication.
+     */
     public String getUrl() {
         return getProperty(URL);
     }
 
+    /**
+     * This method retrieves the name of the WebBrowser to be used.
+     * @return the name of the WebBrowser.
+     */
     public String getBrowser() {
         return getProperty(BROWSER);
     }
