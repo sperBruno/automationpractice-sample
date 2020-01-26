@@ -11,7 +11,7 @@ To have the project running user needs to have the following installed:
 2. Java JRE 8
 3. Gradle
 4. Intellij IDE
-5.Firefox or Chrome drive
+5. Firefox or Chrome drive
 
 #Execute Feature files
 1. Download Chrome or Firefox WebDriver and place the driver on drivers folder on the root path of the project
