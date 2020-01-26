@@ -36,10 +36,18 @@ public class CatalogBox extends BasePage {
 
     }
 
+    /**
+     * This method retrieves true if the CategoryCatalogBox is displayed on the WebApplication.
+     * @return true or false.
+     */
     public boolean categoryCatalogBoxIsDisplayed() {
         return CommonMethods.isElementPresent(catalogBoxElement);
     }
 
+    /**
+     * This method is going to select a CheckBox WebElement based on the color property.
+     * @param color
+     */
     public void setColor(String color) {
 
         switch (color.toUpperCase()) {

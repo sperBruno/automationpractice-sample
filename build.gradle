@@ -26,7 +26,6 @@ buildscript {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.53.0'
-    compile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
 
     testCompile group: 'info.cukes', name: 'cucumber-java', version: '1.2.4'
@@ -61,6 +60,12 @@ task executeFeatures() {
     }
 }
 
+/**
+ * This method generates Html Cucumber Report
+ * @param pathCucumber of the cucumber.json report
+ * @param pathReport destination path
+ * @return
+ */
 def generateReport(String pathCucumber, String pathReport) {
     File reportOutputDirectory = new File(pathReport)
     List<String> jsonReportFiles = new ArrayList<>()

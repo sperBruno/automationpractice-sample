@@ -59,10 +59,10 @@ public class SummerDressesStepdefs {
         LOGGER.info("Dress is displayed " + dress + " with price " + price);
     }
 
-    @And("I verify that listed items have asscendant ordering by price")
-    public void iVerifyThatListedItemsHaveAsscendantOrderingByPrice() {
+    @And("I verify that listed items have ascendant ordering by price")
+    public void iVerifyThatListedItemsHaveAscendantOrderingByPrice() {
         boolean actual = this.dressesPage.getItemsPanel().itemsAreInAscendantOrder();
-        Assert.assertTrue("items list are not in ascendant order: ", actual);
+        Assert.assertTrue("items list are not in ascendant order", actual);
         LOGGER.info("Validate that items list are in ascendant order");
     }
 

@@ -12,4 +12,4 @@ Feature:
     When I sort by "Price: Lowest first" dropdown
     Then I verify that "Printed Chiffon Dress" is displayed with a price of "$16.40"
     And I verify that "Printed Summer Dress" is displayed with a price of "$28.98"
-    And I verify that listed items have asscendant ordering by price
+    And I verify that listed items have ascendant ordering by price
