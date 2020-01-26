@@ -10,10 +10,10 @@ public class CatalogBox extends BasePage {
     @FindBy(xpath = "//p[@class='title_block'][contains(.,'Catalog')]")
     private WebElement catalogBoxElement;
 
-    @FindBy(xpath = "//input[@value='3_1']")
+    @FindBy(id = "layered_id_attribute_group_3")
     private WebElement sizeL;
 
-    @FindBy(xpath = "//input[@value='2_1']")
+    @FindBy(id = "layered_id_attribute_group_2")
     private WebElement sizeM;
 
     @FindBy(id = "layered_id_attribute_group_16")

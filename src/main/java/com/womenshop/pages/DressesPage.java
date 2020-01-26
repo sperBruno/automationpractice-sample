@@ -13,7 +13,7 @@ public class DressesPage extends BasePage {
     @FindBy(xpath = "//h2[@class='title_block'][contains(.,'Dresses')]")
     private WebElement categoryDressBox;
 
-    @FindBy(xpath = "(//a[contains(.,'Summer Dresses')])[3]")
+    @FindBy(css = "#categories_block_left .last")
     private WebElement summerDressesOption;
 
     @FindBy(css = "#selectProductSort")
