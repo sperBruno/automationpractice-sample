@@ -1,5 +1,6 @@
 package com.womenshop.core.utils;
 
+import com.womenshop.core.selenium.DriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ import static com.womenshop.core.selenium.DriverManager.getInstance;
 public class CommonMethods {
     private static final Logger LOGGER = Logger.getLogger(CommonMethods.class.getSimpleName());
     private static final WebDriverWait WEB_DRIVER_WAIT = getInstance().getWait();
+
     private CommonMethods() {
     }
 
@@ -46,7 +48,7 @@ public class CommonMethods {
     /**
      * This method is going to check a CheckBox WebElement in the WebApplication.
      * @param webElement checkbox to be checked.
-     * @param enable true to check or false to uncheck the Checkbox WebElement.
+     * @param enable     true to check or false to uncheck the Checkbox WebElement.
      */
     public static void setCheckBox(WebElement webElement, boolean enable) {
         if (enable) {
@@ -78,11 +80,24 @@ public class CommonMethods {
 
     /**
      * This method is going to select an option from a ComboBox WebElement in the WebApplication.
+     *
      * @param webElementSelect ComboBox WebElement.
-     * @param element to be selected from the ComboBox WebElement.
+     * @param element          to be selected from the ComboBox WebElement.
      */
     public static void selectAElementComboBox(WebElement webElementSelect, String element) {
         Select oSelect = new Select(webElementSelect);
         oSelect.selectByValue(element);
+    }
+
+    /**
+     * This method is going to set a text box field in the WebApplication.
+     *
+     * @param webElement Field WebElement
+     * @param text       to insert on field.
+     */
+    public static void setWebElement(WebElement webElement, String text) {
+        DriverManager.getInstance().getWait().until(ExpectedConditions.visibilityOf(webElement));
+        webElement.clear();
+        webElement.sendKeys(text);
     }
 }
